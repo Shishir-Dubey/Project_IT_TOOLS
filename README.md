@@ -1,6 +1,6 @@
-# Assignment regarding IT_TOOLS_MASTER'S_BigData_ENSAI_2016
-
-Submitted by: Ivan Capin, Shishir Dubey
+# IT TOOLS
+## MASTER'S_BigData_ENSAI_2016
+### Submitted by: Ivan Capin, Shishir Dubey
 
 We assume that the marketing department or another system drops every morning
 a zip file in 'daily_data'. The zip file is the same as provided by Koby.
