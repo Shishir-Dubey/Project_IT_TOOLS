@@ -10,14 +10,12 @@ Ivan Capin, Shishir Dubey
 
 
 We assume that marketing department or another system drops every morning
-a zip file in 'daily_data' as the ones provided by Koby.
-Then, Oozie triggers the system to crunch data.
+a zip file in 'daily_data' as the ones provided by Koby. Then, Oozie triggers 
+the system to crunch data.
 
 Important1: Variant.csv must be put in the 'static_data' folder.
+Important2: The repository must be cloned in the home dir of the user.
 
-Important2: The zip file must be uncompressed in the home dir of the user.
-
-Important3: The uncompressed folder name must be  it_tools
 
 How to simulate a full cycle of the system?
 
