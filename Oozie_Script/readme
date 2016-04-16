@@ -1,0 +1,2 @@
+The workflow script in which  we are scheduling the jobs ,which decides at what time and on which date  any action like creating table , 
+loading them onto mirror database and make aggregations ,which is been done by these scripts.
