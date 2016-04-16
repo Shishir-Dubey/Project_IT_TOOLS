@@ -17,6 +17,8 @@ Important1: Variant.csv must be put in the 'static_data' folder.
 
 Important2: The zip file must be uncompressed in the home dir of the user.
 
+Important3: The uncompressed folder name must be  it_tools
+
 How to simulate a full cycle of the system?
 
 1/ Copy one of Koby's files into daily_data
