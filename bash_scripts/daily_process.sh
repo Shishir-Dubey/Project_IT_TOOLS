@@ -28,11 +28,16 @@ hadoop fs -moveFromLocal ~/it_tools/daily_data/catalogue.csv
 # should be made only once
 hadoop fs -copyFromLocal ~/it_tools/static_data/variant.csv
 
-###################
-# PySpark scripts #
-###################
+####################
+# PySpark scripts# #
+# and hive script# #
+# for weather data #
+####################
+
 python ~/it_tools/pyspark_scripts/GetWeatherData.py
-hadoop fs -moveFromLocal ~/it_tools/daily_data/weather.json
+hadoop fs -moveFromLocal ~/it_tools/daily_data/weather.csv
+hive -f ~/it_tools/hive_scripts/weather.hql
+
 #################
 # Hives scripts #
 #################

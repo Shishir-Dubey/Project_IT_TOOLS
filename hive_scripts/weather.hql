@@ -17,4 +17,4 @@ CREATE TABLE IF NOT EXISTS weatherdatatable (
     temperatureMin double,
     windSpeed double); 
 
-LOAD DATA INPATH 'weather.json' INTO TABLE weatherdatatable;
+LOAD DATA INPATH 'weather.csv' INTO TABLE weatherdatatable;
