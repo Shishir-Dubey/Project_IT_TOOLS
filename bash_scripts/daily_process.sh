@@ -56,7 +56,5 @@ hive -f ~/it_tools/hive_scripts/mirror_db.hql
 ## Updates core_db (contains aggregated data)
 hive -f ~/it_tools/hive_scripts/core_db.hql
 
-hive -f ~/it_tools/hive_scripts/weather.hql
-
 # cleans the directory 
 rm ~/it_tools/daily_data/*.*
