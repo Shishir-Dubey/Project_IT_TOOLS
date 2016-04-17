@@ -21,18 +21,18 @@ sed "s/,/./g" ~/it_tools/daily_data/order.csv > temp.csv && mv temp.csv ~/it_too
 
 # now that the preprocessing is done
 # we can shove the csv files up HDFS
-hadoop fs -moveFromLocal ~/it_tools/daily_data/product_reference.csv /
-hadoop fs -moveFromLocal ~/it_tools/daily_data/customer.csv /
-hadoop fs -moveFromLocal ~/it_tools/daily_data/order.csv /
-hadoop fs -moveFromLocal ~/it_tools/daily_data/catalogue.csv /
+hadoop fs -moveFromLocal ~/it_tools/daily_data/product_reference.csv
+hadoop fs -moveFromLocal ~/it_tools/daily_data/customer.csv
+hadoop fs -moveFromLocal ~/it_tools/daily_data/order.csv
+hadoop fs -moveFromLocal ~/it_tools/daily_data/catalogue.csv
 # should be made only once
-hadoop fs -copyFromLocal ~/it_tools/static_data/variant.csv /
-hadoop fs -copyFromLocal ~/it_tools/pyspark_scripts/loc_pref_filled.json /
+hadoop fs -copyFromLocal ~/it_tools/static_data/variant.csv
+hadoop fs -copyFromLocal ~/it_tools/pyspark_scripts/loc_pref_filled.json
 
 ###################
 # PySpark scripts #
 ###################
-./bin/pyspark python/examples/GetWeatherData.py
+#./bin/pyspark python/examples/GetWeatherData.py
 
 #################
 # Hives scripts #
