@@ -27,13 +27,12 @@ hadoop fs -moveFromLocal ~/it_tools/daily_data/order.csv
 hadoop fs -moveFromLocal ~/it_tools/daily_data/catalogue.csv
 # should be made only once
 hadoop fs -copyFromLocal ~/it_tools/static_data/variant.csv
-hadoop fs -copyFromLocal ~/it_tools/pyspark_scripts/loc_pref_filled.json
 
 ###################
 # PySpark scripts #
 ###################
-#./bin/pyspark python/examples/GetWeatherData.py
-
+python ~/it_tools/pyspark_scripts/GetWeatherData.py
+hadoop fs -moveFromLocal ~/it_tools/daily_data/weather.json
 #################
 # Hives scripts #
 #################
@@ -52,6 +51,7 @@ hive -f ~/it_tools/hive_scripts/mirror_db.hql
 ## Updates core_db (contains aggregated data)
 hive -f ~/it_tools/hive_scripts/core_db.hql
 
+hive -f ~/it_tools/hive_scripts/weather.hql
+
 # cleans the directory 
 rm ~/it_tools/daily_data/*.*
-
