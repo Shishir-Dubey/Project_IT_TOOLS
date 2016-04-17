@@ -6,9 +6,13 @@ We assume that the marketing department or another system drops every morning
 a zip file in 'daily_data'. The zip file is the same as provided by Koby.
 Then, Oozie triggers the system to crunch data.
 
-### Variant.csv must be put in the 'static_data' folder.
+### Important:
 
-### The repository must be cloned in the home dir of the user.
+- The repository must be cloned in the home dir of the user.
+
+- CHMOD 777 bash_scrips/daily_process.sh
+
+- change the absolute path in pySrcipts/GetWeather.py
 
 How to simulate a full cycle of the system?
 
