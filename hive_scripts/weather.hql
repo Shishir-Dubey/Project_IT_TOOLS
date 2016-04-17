@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS weatherdatatable (
     summary string,
     temperatureMax double,
     temperatureMin double,
-    windSpeed double); 
+    windSpeed double)
+ROW FORMAT DELIMITED FIELDS TERMINATED by ","; 
 
 LOAD DATA INPATH 'weather.csv' INTO TABLE weatherdatatable;
+
