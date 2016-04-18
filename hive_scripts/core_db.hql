@@ -58,7 +58,7 @@ STORED AS TEXTFILE;
 
 
 INSERT OVERWRITE TABLE size_count
-select customerid, count(size) as count_size
+select customerid, size, count(size) as count_size
 from mirror_db.purchases
 group by customerid,size
 order by customerid;
@@ -89,7 +89,7 @@ inner join
   group by customerid
 ) t2
   on t1.customerid = t2.customerid
-  and t1.count_size = t2.max_count
+  and t1.count_size = t2.max_count;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----last_purchase-----
@@ -125,12 +125,12 @@ group by p.productid;
 ------------------Customer Final--------
 ------------------------------------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS CUSTOMER_FINAL (Customerid INT, Dominant_Gender STRING,Max_Gender INT, Dominant_Size STRING,Max_Size INT, Last_Purchase_Date TIMESTAMP)
+CREATE TABLE IF NOT EXISTS CUSTOMER_FINAL (Customerid INT, Dominant_Gender STRING, Dominant_Size STRING, Last_Purchase_Date TIMESTAMP)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY '\073'
 STORED AS TEXTFILE;
 
-select table1.customerid, table1.Dominant_Gender,table1.Max_Gender,table2.Dominant_SIZE,table2.Max_size,table3.last_purchase
-from core_db.gender_max as table1 join core_db.size_max as table2 
-on table1.customerid = table2.customerid 
-join core_db.last_purchase as table3 on table3.customerid=table1.customerid
+insert overwrite table CUSTOMER_FINAL
+select table1.customerid, table1.Dominant_Gender,table2.Dominant_SIZE,table3.last_purchase
+from core_db.gender_max as table1 join core_db.size_max as table2 on (table1.customerid = table2.customerid)
+join core_db.last_purchase as table3 on (table3.customerid=table1.customerid);
