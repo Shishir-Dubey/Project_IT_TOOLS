@@ -23,7 +23,7 @@ FIELDS TERMINATED by '\073' stored as textfile
 tblproperties ("skip.header.line.count"="1"); 
 
 
-LOAD DATA INPATH 'catalogue.csv' OVERWRITE INTO TABLE Catalogue; 
-LOAD DATA INPATH 'customer.csv' OVERWRITE INTO TABLE Customer;
-LOAD DATA INPATH 'order.csv' OVERWRITE INTO TABLE Customer_Order;
-LOAD DATA INPATH 'product_reference.csv' OVERWRITE INTO TABLE Product_Reference;
+LOAD DATA INPATH '/catalogue.csv' OVERWRITE INTO TABLE catalogue; 
+LOAD DATA INPATH '/customer.csv' OVERWRITE INTO TABLE customer;
+LOAD DATA INPATH '/order.csv' OVERWRITE INTO TABLE customer_order;
+LOAD DATA INPATH '/product_reference.csv' OVERWRITE INTO TABLE product_reference;
