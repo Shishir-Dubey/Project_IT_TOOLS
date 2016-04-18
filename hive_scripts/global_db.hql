@@ -6,4 +6,4 @@ create table IF NOT EXISTS Variant (VariantId INT, MinSize DOUBLE,MaxSize DOUBLE
 FIELDS TERMINATED by '\073' stored as textfile
 tblproperties ("skip.header.line.count"="1");
 
-LOAD DATA INPATH 'variant.csv' OVERWRITE INTO TABLE Variant;
+LOAD DATA INPATH '/variant.csv' OVERWRITE INTO TABLE variant;
